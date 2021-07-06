@@ -1,34 +1,27 @@
-package com.example.demo;
+package com.example.demo.tests;
 
+import com.example.demo.pageObjects.SauceLabsLoginPage;
+import com.example.demo.utils.Driver;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-
-import java.util.concurrent.TimeUnit;
-
 public class MainPageTest {
-    private WebDriver driver;
+
     public SauceLabsLoginPage sauceLabsLoginPage;
 
     @BeforeEach
     public void setUp() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://www.saucedemo.com/");
-        sauceLabsLoginPage = new SauceLabsLoginPage(driver);
+        Driver.getDriver("chrome");
+        Driver.navigateToUrl("https://www.saucedemo.com/");
+        sauceLabsLoginPage = new SauceLabsLoginPage(Driver.getDriver());
     }
 
     @AfterEach
     public void tearDown() {
-        driver.quit();
+        Driver.closeWebDriver();
     }
+
 
     @Test
     public void negativeLoginTests() {
