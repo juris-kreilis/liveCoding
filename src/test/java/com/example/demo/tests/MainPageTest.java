@@ -1,27 +1,11 @@
 package com.example.demo.tests;
 
-import com.example.demo.pageObjects.SauceLabsLoginPage;
-import com.example.demo.utils.Driver;
-import org.junit.jupiter.api.*;
+import com.example.demo.utils.Preconditions;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MainPageTest {
-
-    public SauceLabsLoginPage sauceLabsLoginPage;
-
-    @BeforeEach
-    public void setUp() {
-        Driver.getDriver("chrome");
-        Driver.navigateToUrl("https://www.saucedemo.com/");
-        sauceLabsLoginPage = new SauceLabsLoginPage(Driver.getDriver());
-    }
-
-    @AfterEach
-    public void tearDown() {
-        Driver.closeWebDriver();
-    }
-
+public class MainPageTest extends Preconditions {
 
     @Test
     public void negativeLoginTests() {
