@@ -13,7 +13,6 @@ public class Driver {
 
     public static WebDriver getDriver(String browser) {
 
-
         if (driver == null) {
             switch (browser) {
                 case "chrome":

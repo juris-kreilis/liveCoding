@@ -25,5 +25,4 @@ public class MainPageTest extends Preconditions {
         assertEquals("Epic sadface: Username is required", sauceLabsLoginPage.errorTextField.getText(), "Wrong label added, this is not correct");
     }
 
-
 }
