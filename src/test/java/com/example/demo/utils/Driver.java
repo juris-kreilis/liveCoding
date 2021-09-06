@@ -32,12 +32,6 @@ public class Driver {
         return driver;
     }
 
-    public static void closeWebDriver() {
-        if (driver != null) {
-            driver.quit();
-            driver = null;
-        }
-    }
 
     private static void driverSetup() {
         driver.manage().window().maximize();

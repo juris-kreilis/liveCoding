@@ -3,7 +3,6 @@ package com.example.demo.utils;
 import com.example.demo.pageObjects.SauceLabsHeaderContainer;
 import com.example.demo.pageObjects.SauceLabsInventoryPage;
 import com.example.demo.pageObjects.SauceLabsLoginPage;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
 import static com.example.demo.utils.StringConstants.DEFAULT_BROWSER;
@@ -24,8 +23,5 @@ public class Preconditions {
         sauceLabsHeaderContainer = new SauceLabsHeaderContainer(Driver.getDriver());
     }
 
-    @AfterEach
-    public void tearDown() {
-        Driver.closeWebDriver();
-    }
+
 }
