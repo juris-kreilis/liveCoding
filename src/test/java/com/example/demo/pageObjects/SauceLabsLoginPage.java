@@ -16,8 +16,20 @@ public class SauceLabsLoginPage {
     @FindBy(id = "login-button")
     public WebElement loginButton;
 
+    @FindBy(xpath = "//input[@id='login-button']")
+    public WebElement loginButtonxpath;
+
+    @FindBy(css = "input#login-button")
+    public WebElement loginButtoncss;
+
     @FindBy(className = "error-message-container")
     public WebElement errorTextField;
+
+    @FindBy(css = "div#login_credentials  h4")
+    public WebElement pareizieLietotajvardiCss;
+
+    @FindBy(xpath = "//div[@id='login_credentials']//h4")
+    public WebElement pareizieLietotajvardiXpath;
 
     public void login(String username, String password){
         usernameInputField.clear();
